@@ -9,12 +9,13 @@ const FormWrapper = styled.div`
   bottom: -1rem;
   right: -1rem;
   padding: 0.75rem 1rem;
-  width: 50%;
+  width: 100%;
   height: 100%;
   z-index: 2;
 `;
 const Form = styled.form`
-  width: 100%;
+  width: 50%;
+  margin-left: 50%;
 `;
 const FormControl = styled.div`
   margin-bottom: 1.25rem;
@@ -60,6 +61,16 @@ const SubmitBtn = styled.button`
   padding: 1rem;
   border-radius: 0.25rem;
   color: #fff;
+  :disabled {
+    background-color: #1c608e;
+    color: #dadada;
+  }
+`;
+
+const Logo = styled.img`
+  position: absolute;
+  top: 40%;
+  left: 5%;
 `;
 
 interface IProps {
@@ -79,27 +90,30 @@ export default (props: IProps): JSX.Element => {
 
   return (
     <FormWrapper show={show}>
-      <H3>Nezáväzná objednávka</H3>
       <CloseBtn onClick={toggle} />
+      <Logo src='https://www.javorina.sk/assets/images/javorina-logotype.svg' />
       <Form>
+        <H3>Nezáväzná objednávka</H3>
         <FormControl>
-          <Input type="text" id="name" placeholder="Zadajte svoje meno" />
+          <Input type='text' id='name' placeholder='Zadajte svoje meno' />
         </FormControl>
         <FormControl>
-          <Input type="text" id="surname" placeholder="Zadajte priezvisko" />
+          <Input type='text' id='surname' placeholder='Zadajte priezvisko' />
         </FormControl>
         <FormControl>
-          <Input type="text" id="email" placeholder="Zadajte svoj e-mail" />
+          <Input type='text' id='email' placeholder='Zadajte svoj e-mail' />
         </FormControl>
         <FormControl>
-          <TextArea id="message" placeholder="Napíšte nám správu..." rows={3} />
+          <TextArea id='message' placeholder='Napíšte nám správu...' rows={3} />
         </FormControl>
         <H3>Objednaný produkt:</H3>
         <P>{title}</P>
         {images && images.length > 0
           ? images.map((item, i) => <Img src={item} key={`img-${i}`} />)
           : null}
-        <SubmitBtn type="submit">Odoslať objednávku</SubmitBtn>
+        <SubmitBtn type='submit' disabled>
+          Odoslať objednávku
+        </SubmitBtn>
       </Form>
     </FormWrapper>
   );
