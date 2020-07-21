@@ -81,6 +81,7 @@ export default function Controls({
       ref={controls}
       args={[camera, domElement]}
       maxPolarAngle={Math.PI / 2.1}
+      minDistance={2}
     />
   );
 }

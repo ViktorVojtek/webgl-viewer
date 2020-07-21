@@ -20,6 +20,7 @@ interface IScene {
   setOrderImages?: (images: string[]) => void;
   showForm?: boolean;
 }
+
 export default ({
   loading,
   objIdx,

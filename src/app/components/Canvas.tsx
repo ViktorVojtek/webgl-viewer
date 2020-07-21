@@ -81,8 +81,6 @@ export default () => {
     setOrderImgs(images);
   };
 
-  console.log(itemIdx);
-
   return (
     <div style={rootStyle}>
       <Canvas
@@ -123,9 +121,9 @@ export default () => {
           showForm={showForm}
         />
       </Canvas>
-      {itemIdx > 0 && <ArrowBtn onClick={handlePrevItem} direction="left" />}
+      {itemIdx > 0 && <ArrowBtn onClick={handlePrevItem} direction='left' />}
       {itemIdx < itemsCount - 1 && (
-        <ArrowBtn direction="right" onClick={handleNextItem} />
+        <ArrowBtn direction='right' onClick={handleNextItem} />
       )}
       <FormBtn onClick={handleOpenForm} show={showForm}>
         Objednávka
