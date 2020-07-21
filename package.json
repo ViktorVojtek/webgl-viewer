@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
+    "production": "NODE_ENV=production forever start ./webgl-viewer-app.js",
     "test": "jest"
   },
   "keywords": [
@@ -19,6 +20,7 @@
     "@react-spring/core": "^9.0.0-rc.3",
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-spring/web": "^9.0.0-rc.3",
+    "helmet": "^3.23.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-three-fiber": "^4.2.10",
