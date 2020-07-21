@@ -19,9 +19,14 @@ const SpotLightOnCam = () => {
   return <spotLight ref={light} color={0xffa95c} intensity={2} />;
 };
 
+// 0xaaaaaa
+// 0xd3d3fd
+// 0x0000ff
+// 0xf4fffa
+// 0x9393fd
 export default () => (
   <group>
-    <ambientLight color={0xaaaaaa} position={[0, 0, 0]} intensity={1.25} />
+    <ambientLight color={0xfff4e5} position={[0, 0, 0]} intensity={1.25} />
     <hemisphereLight
       color={0xffffff}
       groundColor={new Color(0xaaaaaa)}
@@ -29,7 +34,7 @@ export default () => (
     />
     <directionalLight
       castShadow
-      color={0xffffff}
+      color={0xfdb813}
       position={[1, 8, 3]}
       intensity={0.25}
       shadow-mapSize-width={4096}
@@ -41,6 +46,6 @@ export default () => (
       shadow-camera-top={5}
       shadow-camera-bottom={-5}
     />
-    <SpotLightOnCam />
+    {/* <SpotLightOnCam /> */}
   </group>
 );

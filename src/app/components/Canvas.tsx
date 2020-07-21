@@ -9,6 +9,8 @@ import Form from './Form';
 import useStore from '../lib/store';
 import { cameraPosStart } from '../constants';
 
+// const Form = React.lazy(() => import('./Form'));
+
 const mImages = [
   '../../../static/images/material_set/natur.png',
   '../../../static/images/material_set/whitewashed.png',

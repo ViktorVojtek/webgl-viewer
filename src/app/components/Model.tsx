@@ -1,14 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
   Mesh,
-  MeshPhongMaterial,
-  MeshPhongMaterialParameters,
-  LinearFilter,
+  // MeshPhongMaterial,
+  // MeshPhongMaterialParameters,
+  // LinearFilter,
   MeshPhysicalMaterial,
   MeshPhysicalMaterialParameters,
-  MeshLambertMaterial,
+  // MeshLambertMaterial,
 } from 'three';
-import { useThree } from 'react-three-fiber';
+// import { useThree } from 'react-three-fiber';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
@@ -40,7 +40,7 @@ function Model({ data, hide, onModelLoaded, showForm }: IModel) {
     store.dispatch,
   ]);
 
-  const { scene } = useThree();
+  // const { scene } = useThree();
 
   useMemo(() => {
     return new MTLLoader().load(materialPath, (materials) => {
@@ -120,7 +120,7 @@ function Model({ data, hide, onModelLoaded, showForm }: IModel) {
     }
   };
 
-  console.log(scene);
+  // console.log(scene);
 
   return hide ? null : object ? (
     <group>
@@ -131,7 +131,7 @@ function Model({ data, hide, onModelLoaded, showForm }: IModel) {
           onPointerOut={() => handleChangeCursor(false)}
           position={[0.65, 1.35, -0.25]}
           scale={[0.25, 0.25, 0.25]}
-          texture="../../../static/images/info.png"
+          texture='../../../static/images/info.png'
         />
       )}
       <mesh castShadow receiveShadow name={title}>
